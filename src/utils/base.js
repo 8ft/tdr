@@ -26,88 +26,43 @@ window.addEventListener('pageshow', function (e) {
 refreshRem();
 
 export default {
-    jsBridge: function (data) {
-        let url = 'jsbridge::' + JSON.stringify(data),
-            iframe = document.createElement('iframe');
-
-        iframe.style.width = '1px';
-        iframe.style.height = '1px';
-        iframe.style.display = 'none';
-        iframe.src = url;
-
-        document.body.appendChild(iframe);
-        setTimeout(function () {
-            iframe.remove();
-        }, 100);
-    },
-
-    downLoad(mbox,title,msg){
-        mbox.confirm(msg,title).then(async function(){
-            location.href="https://a.app.qq.com/o/simple.jsp?pkgname=com.enjoyauto.lecheng";
-        });
-    },
-
-    goNative(page,data,redirectUrl){
-        this.jsBridge({
-            type: "goNative",
-            data: {
-                page:page,
-                val:data,
-                redirectUrl:redirectUrl
-            }
-        });
-    },
-
-    shareConfig: function (obj,action) {
+    shareConfig: function (obj, action) {
         let data = obj || {
-            share_title: '盈众乐橙服务平台',
+            share_title: '三佳天地人茶叶专业合作社',
             share_desc: '',
             share_img: location.origin + '/CRM/WeChat/App/static/img/login_logo.png',
-            share_url: location.href.replace(location.search,'?')
+            share_url: location.href.replace(location.search, '?')
         }
 
-        if (isLecheng) {
-            let shareData = {
-                type: "share",
-                data: {
-                    action:action||'config',
-                    title: data.share_title,
-                    desc: data.share_desc,
-                    imgUrl: data.share_img,
-                    link: data.share_url
-                }
-            }
-            this.jsBridge(shareData);
-        } else if (/MicroMessenger/.test(navigator.userAgent)) {
-            wx.ready(function () {
-                wx.showMenuItems({
-                    menuList: [
-                      'menuItem:share:appMessage',
-                      'menuItem:share:timeline',
-                      'menuItem:favorite'
-                    ]
-                });
-                //分享到朋友圈
-                wx.onMenuShareTimeline({
-                    title: data.share_title,
-                    link: data.share_url,
-                    imgUrl: data.share_img,
-                    success: function () {
-                        data.callback && data.callback();
-                    }
-                });
-                //分享给朋友
-                wx.onMenuShareAppMessage({
-                    title: data.share_title,
-                    desc: data.share_desc,
-                    link: data.share_url,
-                    imgUrl: data.share_img,
-                    success: function () {
-                        data.callback && data.callback();
-                    }
-                });
+        wx.ready(function () {
+            wx.showMenuItems({
+                menuList: [
+                    'menuItem:share:appMessage',
+                    'menuItem:share:timeline',
+                    'menuItem:favorite'
+                ]
             });
-        }
+            //分享到朋友圈
+            wx.onMenuShareTimeline({
+                title: data.share_title,
+                link: data.share_url,
+                imgUrl: data.share_img,
+                success: function () {
+                    data.callback && data.callback();
+                }
+            });
+            //分享给朋友
+            wx.onMenuShareAppMessage({
+                title: data.share_title,
+                desc: data.share_desc,
+                link: data.share_url,
+                imgUrl: data.share_img,
+                success: function () {
+                    data.callback && data.callback();
+                }
+            });
+        });
+
     },
 
     setAppTitle: function (title) {
@@ -126,19 +81,6 @@ export default {
             iframe.addEventListener('load', iframeCallback)
             document.body.appendChild(iframe)
         }
-    },
-
-    encrypt(con){
-        const publicKey="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoK/x3oHE" +
-            "MyawA8/XKJQrM21tBffeNiQHIWJ8a10TdkjPB21j/t05KLmfR6XYzAshIH3cA1w6kHYNTT60GVIUXU/v1uOHM" +
-            "atpNfqh38/VUlxgenVUE3iX97WWiPj1+hpvXRwO4yGnC0kgqoQrwO6bQRdfyrWFLyBld+dKoYA1uj28eSnd8N" +
-            "PNE7LQq7c6p42mlgFU3HhbsZxKT9HeGrnfJKDTB4/myTrExdWofWNfWPURPju/VYMBZt2ZJMBA7+XSykqIxUl" +
-            "2NO+YFcdKa4PTqn/R6pMX8fj3fXNx+ieNUqf/RBO1DWb/Vd2xjY6+8TdHzuFuNndmNvsiVEBJvntFNQIDAQAB";
-
-        const encrypt = new JSEncrypt();
-        encrypt.setPublicKey(publicKey);
-        
-        return encrypt.encrypt(con)
     },
 
     getUrlParam: function (name) {

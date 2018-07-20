@@ -2,19 +2,16 @@
 
 import Vue from 'vue'
 import Base from './base'
-// import Np from 'number-precision'
-// import Http from './http'
-// import Cache from './cache'
-// import User from './user'
+import Http from './http'
+import Cache from './cache'
+import Np from 'number-precision'
 
-Vue.$utils=Vue.prototype.$utils = Base;
-// Vue.$np=Vue.prototype.$np = Np;
-// Vue.$cache=Vue.prototype.$cache = Cache;
+import Fastclick from 'fastclick'
+Fastclick.attach(document.body);
 
-// Vue.use(Http);
-// Vue.use(User);
-
-
+Vue.prototype.$utils = Base;
+Vue.prototype.$np = Np;
+Vue.prototype.$cache = Cache;
 
 
 

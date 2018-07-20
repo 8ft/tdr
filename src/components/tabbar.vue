@@ -1,11 +1,11 @@
 <template>
   <div class="tabbar" ref="tabBar">
 
-    <div @click="replacePath('store')" :class="{'active':curPath==='/store'}">
+    <div @click="replacePath('goods')" :class="{'active':curPath==='/goods'}">
       <svg class="icon" aria-hidden="true">
           <use :xlink:href="'#icon-store'+(curPath==='/store'?'_fill':'')"></use>
       </svg>
-      <h1>商店</h1>
+      <h1>商品</h1>
     </div>
 
     <div @click="replacePath('cart')" :class="{'active':curPath==='/cart'}">

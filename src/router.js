@@ -3,23 +3,25 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const Store = () => import('@/views/common/store/index.vue')
+const Goods = () => import('@/views/common/goods/index.vue')
 const Cart = () => import('@/views/common/orders/cart.vue')
 const Mine = () => import('@/views/common/mine.vue')
+
+const GoodsDetail = () => import('@/views/common/goods/detail.vue')
 
 export default new Router({
   routes: [
     
     { 
       path: '/', 
-      redirect: '/store'
+      redirect: '/goods'
     },{ 
-      path: '/store', 
+      path: '/goods', 
       meta: {
         title:'商店',
         hasTabBar: true
       },
-      component: Store
+      component: Goods
     },{ 
       path: '/cart', 
       meta: {
@@ -34,6 +36,12 @@ export default new Router({
         hasTabBar: true
       },
       component: Mine
+    },{ 
+      path: '/goods/:id', 
+      meta: {
+        title:'商品详情'
+      },
+      component: GoodsDetail
     }
     
   ]
