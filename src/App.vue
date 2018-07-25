@@ -1,20 +1,13 @@
 <template>
   <div id="app" :style="'height:'+wrapperHeight + 'px;'">
-
     <transition :name="transitionName" :leave-active-class="leaveName">
       <keep-alive :exclude="/^ex-/">
         <router-view :style="hasTabBar?'bottom:.5rem;':'bottom:0;'"></router-view>
       </keep-alive>
     </transition>
-
     <tabbar v-if="hasTabBar"></tabbar>
-
   </div>
 </template>
-
-<style lang="scss">
-  @import './assets/style/base.scss';
-</style>
 
 <script>
 import Tabbar from './components/tabbar.vue'
@@ -52,3 +45,7 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  @import './assets/style/base.scss';
+</style>
