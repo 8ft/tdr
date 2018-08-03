@@ -9,6 +9,9 @@ import Rate from './common/rate';
 import OrderLi from './orders/li';
 import OrderActionBar from './orders/actionBar';
 
+require('swiper/dist/css/swiper.css');
+import { swiper, swiperSlide } from 'vue-awesome-swiper';
+
   //mint-ui
   Vue.use(Lazyload);
   Vue.use(InfiniteScroll);
@@ -24,7 +27,6 @@ import OrderActionBar from './orders/actionBar';
   Vue.component(DatetimePicker.name, DatetimePicker);
   Vue.component(Actionsheet.name, Actionsheet);
  
-  //lecheng
   Vue.component(AppLayout.name, AppLayout);
   Vue.component(CellSwipe.name, CellSwipe);
   Vue.component(PageSwitch.name, PageSwitch);
@@ -32,6 +34,11 @@ import OrderActionBar from './orders/actionBar';
 
   Vue.component(OrderLi.name, OrderLi);
   Vue.component(OrderActionBar.name, OrderActionBar);
+
+  Vue.component(swiper.name, swiper);
+  Vue.component(swiperSlide.name, swiperSlide);
+
+  
 
   Vue.$toast=Vue.prototype.$toast = Toast;
   Vue.$indicator=Vue.prototype.$indicator = Indicator;

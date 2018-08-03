@@ -66,10 +66,10 @@ export default {
 <style lang="scss">
 @import "../../assets/style/var.scss";
 .container{
-  header{position:absolute;top:0;left:0;right:0;z-index: $topFloor;
+  header{position:fixed;top:0;left:0;right:0;z-index: $topFloor;
       .app-title{font-size:.16rem;font-weight:600;color:#fff;text-align:center;background:$mainColor;height:.4rem;line-height:.4rem;}
   }
   #appSubPage{position: absolute;left:0;right:0;z-index: $topFloor;}
-  footer{position:absolute;bottom:0;left:0;right:0;z-index: $topFloor;}
+  footer{position:fixed;bottom:0;left:0;right:0;z-index: $topFloor;}
 }
 </style>

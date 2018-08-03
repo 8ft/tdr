@@ -32,11 +32,12 @@ export default {
       this.hasTabBar=to.meta.hasTabBar;
 
       let tt = to.meta.transition,
-        ft = from.meta.transition;
+        ft = from.meta.transition,
+        pathIndex=this.$cache.history.indexOf(to.path);
 
-      if (this.$cache.history.indexOf(to.path) != -1) {//back
+      if ( pathIndex!= -1) {//back
         this.transitionName = ft ? ft + '-out' : '';
-        this.$cache.history.pop();
+        this.$cache.history=this.$cache.history.slice(0,pathIndex+1);
       } else {//forward
         this.transitionName = tt ? tt + '-in' : '';
         this.$cache.history.push(to.path);

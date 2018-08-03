@@ -114,9 +114,9 @@ ul li{list-style:none;}
 
 
 /*-------页面过渡------- */
-.fade-enter{opacity:0;}
-.fade-enter-active{transition:opacity .3s ease;}
-.fade-leave-active{visibility:hidden;}
+.fade-in-enter,.fade-out-enter{visibility:hidden;opacity:0;}
+.fade-in-enter-active{transition:opacity .5s ease;}
+.fade-out-enter-active{transition:opacity .5s ease;}
 
 .slide-in-enter,.slide-out-enter{visibility:hidden;}
 .slide-in-enter-active{animation:pageFromRightToCenter .4s forwards;}

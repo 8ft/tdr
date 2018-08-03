@@ -19,27 +19,31 @@ export default new Router({
       path: '/goods', 
       meta: {
         title:'商店',
-        hasTabBar: true
+        hasTabBar: true,
+        transition:'fade'
       },
       component: Goods
     },{ 
       path: '/cart', 
       meta: {
         title:'购物车',
-        hasTabBar: true
+        hasTabBar: true,
+        transition:'fade'
       },
       component: Cart
     },{ 
       path: '/mine', 
       meta: {
         title:'我的',
-        hasTabBar: true
+        hasTabBar: true,
+        transition:'fade'
       },
       component: Mine
     },{ 
       path: '/goods/:id', 
       meta: {
-        title:'商品详情'
+        title:'商品详情',
+        transition:'fade'
       },
       component: GoodsDetail
     }

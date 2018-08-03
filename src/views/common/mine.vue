@@ -108,8 +108,8 @@ export default {
   @import '@/assets/style/base.scss';
   .container{background-color: #24292e;background-image: url(../../assets/img/star-bg.svg),linear-gradient(#191c20, #24292e 15%);background-repeat:no-repeat;background-position: center 0, 0 0, 0 0;background-size:contain; }
   
-  .user-card{text-align:center;padding:.4rem 0 .3rem;color:#fff;
-     img{width:.6rem;height:.6rem;border-radius:50%;margin-bottom:.06rem;border:4px solid #fff;}
+  .user-card{text-align:center;padding:.4rem 0 .26rem;color:#fff;
+     img{width:.6rem;height:.6rem;border-radius:50%;margin-bottom:.04rem;border:4px solid #fff;}
   }
 
   .order-shortcuts {@include box;border-top:1px solid hsla(0,0%,93%,.1);border-bottom:1px solid hsla(0,0%,93%,.1);padding:.1rem;color:$lightGray;align-items:center;box-sizing:border-box;
@@ -118,7 +118,7 @@ export default {
         h1{line-height: .1rem;font-size:$h4;margin-top:.06rem;}
       }
   }
-  .fns{padding:.3rem .2rem;color:#fff;
+  .fns{padding:.3rem .2rem .4rem;color:#fff;
       .fn{width:50%;text-align:center;float:left;box-sizing:border-box;margin-bottom:.3rem;
         .exp-progress-bar{width:1rem;height:1rem;display:inline-block;position: relative;box-sizing: border-box;padding-bottom:.1rem;
             svg{transform: rotate(-0.05deg);}
