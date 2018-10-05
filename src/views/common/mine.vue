@@ -1,7 +1,7 @@
 <template>
     <app-layout>
         <div class="user-card">
-            <img src="@/assets/img/profile.jpg">
+            <img src="img/profile.jpg">
             <h1>八疯兔</h1>
         </div>
         
@@ -76,10 +76,7 @@ export default {
             matrix:''
         };
     },
-    computed:{
-     
-    },
-    activated(){
+    mounted(){
         let cos=this.cos,
             sin=this.sin,
             deg=this.deg,
@@ -88,25 +85,25 @@ export default {
         this.cos=Math.cos(deg*Math.PI/180);
         this.sin=Math.sin(deg*Math.PI/180);
         this.matrix='matrix('+this.cos+','+this.sin+','+-this.sin+','+this.cos+','+circleCenter+','+circleCenter+')';
-
+    },
+    activated(){
         setTimeout(()=>{
             this.expPercent=.9;
         },1000)
     },
     methods:{
-        dasharray:function(p){
+        dasharray(p){
             let perimeter=this.perimeter,
                 percent=p*0.75;
             return perimeter * percent + ' ' + perimeter * (1- percent)
         }
     }
-
 }
 </script>
 
 <style lang="scss" scoped>
   @import '@/assets/style/base.scss';
-  .container{background-color: #24292e;background-image: url(../../assets/img/star-bg.svg),linear-gradient(#191c20, #24292e 15%);background-repeat:no-repeat;background-position: center 0, 0 0, 0 0;background-size:contain; }
+  .container{background-color: #24292e;background-image: url(/img/star-bg.svg),linear-gradient(#191c20, #24292e 15%);background-repeat:no-repeat;background-position: center 0, 0 0, 0 0;background-size:contain; }
   
   .user-card{text-align:center;padding:.4rem 0 .26rem;color:#fff;
      img{width:.6rem;height:.6rem;border-radius:50%;margin-bottom:.04rem;border:4px solid #fff;}

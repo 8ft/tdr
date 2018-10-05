@@ -13,19 +13,19 @@
 
     <div slot="aside" v-for="(item,index) in main" :key="index" v-if="cur===index" class="page-content cls-con">
       <a href="https://baike.baidu.com/item/%E9%93%81%E8%A7%82%E9%9F%B3/5315?fr=aladdin">
-        <img class="ad" src="@/assets/img/timg.jpg">
+        <img class="ad" src="img/timg.jpg">
       </a>
 
       <ul class="goods">
            <router-link tag="li" to="/goods/1">
-                <img src="@/assets/img/goods1.jpg">
+                <img src="img/goods1.jpg">
                 <h1>天香一号</h1>
                 <h2>上品茶青，大师手造</h2>
                 <div>￥5288<del>￥6666</del></div>
             </router-link>
 
             <router-link tag="li" to="">
-                <img src="@/assets/img/goods2.jpg">
+                <img src="img/goods2.jpg">
                 <h1>天然野茶</h1>
                 <h2>自然放养，清新稀少</h2>
                 <div>￥600<del>￥680</del></div>

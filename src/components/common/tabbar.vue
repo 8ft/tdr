@@ -45,7 +45,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../assets/style/var.scss";
+  @import "../../assets/style/var.scss";
   .tabbar {position:fixed;bottom:0;left:0;right:0;z-index: $topFloor;@include box;border-top:$border;height: .5rem; background:#fff;box-sizing:border-box;padding-top:.06rem;
     a{@include flex;text-align:center;
       h1{line-height: .1rem;font-size:$h4;margin-top:.03rem;}

@@ -3,7 +3,6 @@ import Vue from 'vue'
 import { Toast, Indicator, MessageBox, Loadmore, InfiniteScroll, Popup, Lazyload, Navbar, TabItem, Radio, Switch, Picker, IndexList, IndexSection, DatetimePicker,Actionsheet } from 'mint-ui'
 
 import AppLayout from './common/appLayout';
-import PageSwitch from './common/pageSwitch';
 import CellSwipe from './common/cellSwipe';
 import Rate from './common/rate';
 import OrderLi from './orders/li';
@@ -27,9 +26,9 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
   Vue.component(DatetimePicker.name, DatetimePicker);
   Vue.component(Actionsheet.name, Actionsheet);
  
+  //other
   Vue.component(AppLayout.name, AppLayout);
   Vue.component(CellSwipe.name, CellSwipe);
-  Vue.component(PageSwitch.name, PageSwitch);
   Vue.component(Rate.name, Rate);
 
   Vue.component(OrderLi.name, OrderLi);
@@ -37,8 +36,6 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
 
   Vue.component(swiper.name, swiper);
   Vue.component(swiperSlide.name, swiperSlide);
-
-  
 
   Vue.$toast=Vue.prototype.$toast = Toast;
   Vue.$indicator=Vue.prototype.$indicator = Indicator;

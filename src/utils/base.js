@@ -71,7 +71,7 @@ export default {
         if (/iphone|ipad|ipod/.test(mobile)) {
             let iframe = document.createElement('iframe')
             iframe.style.display = 'none'
-            iframe.setAttribute('src', '/CRM/WeChat/App/static/title.txt')
+            iframe.setAttribute('src', '/favicon.ico')
             let iframeCallback = function () {
                 setTimeout(function () {
                     iframe.removeEventListener('load', iframeCallback)
@@ -129,41 +129,6 @@ export default {
             return num * 60 * 60 * 1000;
         } else if (type == "d") {
             return num * 24 * 60 * 60 * 1000;
-        }
-    },
-
-    ls: {
-        isSupport: window.localStorage ? true : false,
-        set: function (name, val) {
-            if (this.isSupport) {
-                if (typeof (val) === 'object') {
-                    val = JSON.stringify(val);
-                }
-                window.localStorage[name] = val;
-            }
-        },
-        get: function (name) {
-            if (this.isSupport) {
-                let val = window.localStorage[name];
-
-                try {
-                    return JSON.parse(val);
-                } catch (e) {
-                    return val;
-                }
-            }
-        },
-        del: function (name) {
-            if (this.isSupport) {
-                window.localStorage.removeItem(name);
-
-            }
-        },
-        clear: function () {
-            if (this.isSupport) {
-                window.localStorage.clear();
-
-            }
         }
     }
 }

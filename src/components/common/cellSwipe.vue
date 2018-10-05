@@ -32,7 +32,7 @@ import Clickoutside from '../../utils/clickoutside';
  * </lc-cell-swipe>
  */
 export default {
-  name: 'lc-cell-swipe',
+  name: 'cell-swipe',
 
   directives: { Clickoutside },
 

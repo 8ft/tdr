@@ -1,4 +1,5 @@
 $border:1px solid hsla(0,0%,93%,.8);
+
 $mainColor:deepskyblue;
 $black:#22222d;
 $lightBlack:#55555d;
@@ -16,8 +17,6 @@ $h4:.1rem;
 $topFloor:203;
 $middleFloor:202;
 $bottomFloor:201;
-
-@mixin bold{font-size:$h2;color:$black;}
 
 @mixin box{display:flex;flex-wrap:wrap;}
 @mixin flex($value:1){display:block;flex:$value;}

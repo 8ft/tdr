@@ -41,8 +41,7 @@ export default {
     },
     watch:{
         layoutChanged(val){
-            console.log(val);
-            // this.setPageSize();
+            this.setPageSize();
         }
     },
     activated(){

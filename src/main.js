@@ -3,9 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-import iconFont from './assets/font/iconfont'
-import components from './components/index'
-import utils from './utils/index'
+import iconFont from '@/assets/font/iconfont'
+import components from 'comps'
+import utils from '@/utils'
 
 
 Vue.config.productionTip = false

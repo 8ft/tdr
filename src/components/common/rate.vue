@@ -28,7 +28,7 @@
 
 <script>
   export default {
-    name: 'lc-rate',
+    name: 'rate',
     props:{
         icon:{
             type:String,
